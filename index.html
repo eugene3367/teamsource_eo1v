@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배스킨라빈스</title>
+    <!-- 메타포(검색엔진에서 잘 검색되기 위해서) -->
+    <meta name="description" content="행복을 전하는 프리미엄 아이스크림, 배스킨라빈스 공식 홈페이지 입니다.">
+    <meta name="keywords" content="baskinrobbins, br31, 배스킨라빈스, 배라, 베라">
+    <!--오픈그래프-->
+    <meta property="og:site_name" content="배스킨라빈스">
+    <meta property="og:title" content="배스킨라빈스">
+    <meta property="og:url" content="http://www.baskinrobbins.co.kr">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="행복을 전하는 프리미엄 아이스크림, 배스킨라빈스 공식 홈페이지 입니다.">
+    <meta property="og:image" content="http://www.baskinrobbins.co.kr/assets/images/common/img_br_sns.png">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="400">
+    <!--파비콘(바로가기 아이콘, 스마트폰에서 쓰임)-->
+    <link rel="shortcut icon" type="image/x-icon" href="./img/icon/favi.png">
+    <!-- 각 종 플러그인과 설정 파일 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <!-- 구형 브라우저 html5태그 인식 -->
+    <script src="./js/html5shiv.js"></script>
+    <!-- 구형 브라우저에서 css animation 인식 -->
+    <script src="./js/prefixfree.min.js"></script>
+    <!-- 구형 브라우저에서 미디어쿼리 인식 -->
+    <script src="./js/respond.min.js"></script>
+    <!-- jquery 플러그인 연결 -->
+    <script src="./js/jquery-1.11.1.js"></script>
+
+    <link rel="stylesheet" href="css/reset2.css">
+    <link rel="stylesheet" href="header.css">
+    <style>
+        /* header.css */
+
+        /* content */
+        .content { clear: both; width: 100%; }
+        .content:after { content: ""; display: block; clear: both; }
+        .vs { clear: both; width: 100%; height: 100vh; overflow: hidden; }      
+        .page { clear: both; width: 100%; }
+        .page_wrap { width: 1200px; margin: 0 auto; }
+        #page1, #page3 { background-color: #ececec; }
+        .page_tit { text-align: center; font-size: 32px; padding-top: 2em; padding-bottom: 2em; }
+        .lst { clear: both;  width: 1200px; padding-bottom: 80px; }
+        .lst:after { content: ""; display: block; clear: both; }
+        .lst li { margin-bottom: 40px;}
+        .lst li.left {            float: left;            width: 620px;            height: 349px;        }
+
+        .lst li.right {
+            float: right;
+            width: 540px;
+            height: 349px;
+            padding-top: 25px;
+        }
+
+        .ico_lst {
+            clear: both;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .ico_lst li a {
+            display: block;
+            background-repeat: no-repeat;
+            background-position: 0 center;
+            background-size: auto 80%;
+            padding-left: 85px;
+        }
+
+        .ico_lst li a.icon1 {
+            background-image: url(img/icon/human96.png);
+        }
+
+        .ico_lst li a.icon2 {
+            background-image: url(img/icon/citizen96.png);
+            background-size: auto 110%;
+        }
+
+        .ico_lst li a.icon3 {
+            background-image: url(img/icon/youth96.png);
+            background-size: auto 100%;
+        }
+
+        .cate_tit {
+            color: #222;
+            font-size: 20px;
+            padding-bottom: 0.5em;
+        }
+
+        .cate_com {
+            color: #222;
+            font-size: 16px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        #page2 {
+            background-color: rgb(235, 230, 211);
+        }
+
+        .pic_lst {
+            clear: both;
+            width: 100%;
+            padding-bottom: 120px;
+        }
+
+        .pic_lst::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .pic_lst li {
+            float: left;
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .pic_lst li a {
+            display: block;
+            width: 360px;
+            margin-right: 40px;
+            overflow: hidden;
+            height: 300px;
+        }
+
+        .pic_lst li a img {
+            display: block;
+            width: 732px;
+            margin-left: -120px;
+            transition-duration: 0.8s;
+        }
+
+        .pic_lst li a:hover img {
+            margin-left: 0;
+        }
+
+        .pic_lst li a .hv_box {
+            width: 360px;
+            height: 300px;
+            color: #fff;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            transition-duration: 0.8s;
+            background-color: transparent;
+        }
+
+        .pic_lst li a:hover .hv_box {
+            opacity: 1;
+        }
+
+        .pic_date {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            text-shadow: 0px 0px 3px red;
+        }
+
+        .pic_tit {
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+            text-shadow: 0px 0px 3px blue;
+        }
+
+        #page3 {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            height: 100vh;
+            background-image: url(img/partnerlogo/bg_logo.jpg);
+            overflow: hidden;
+        }
+
+        #page3 .page_wrap {
+            width: 100%;
+        }
+
+
+        /* footer.css */
+    </style>
+    <link rel="stylesheet" href="footer.css">
+    <script>
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                var ht = $(window).height();
+                var tp = $(this).scrollTop();
+                if (tp >= 600) {
+                    $(".hd").css("position", "fixed");
+                } else {
+                    $(".hd").css("position", "absolute");
+                }
+            });
+            $
+            $("<ul class='circle_lst lst2'></ul>").insertAfter($(".circle_lst"));
+            $lst1_obj = $(".circle_lst li").clone();
+            $(".circle_lst.lst2").append($lst1_obj);
+        });   
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="hd">
+            <img src="img/mainbanner.gif" alt="" class="tnbbg">
+            <div class="hd_wrap">
+                <div class="tnb">                           
+                    <nav class="tnb1">
+                        <a href=""><img src="icon/icon_facebook.png" alt=""></a>
+                        <a href=""><img src="icon/icon_twitter.png" alt=""></a>
+                        <a href=""><img src="icon/icon_blog.png" alt=""></a>
+                        <a href=""><img src="icon/icon_instgram.png" alt=""></a>
+                        <a href=""><img src="icon/icon_youtube.png" alt=""></a>
+                    </nav>
+                    <a href="index.html" class="logo"><img src="logo/logo_baskinrobbins.png" alt="POSCOlogo"></a>
+                    <nav class="tnb2">
+                        <a href="consumer.html">고객센터</a>
+                        <a href="contact.html">CONTACTUS</a>
+                        <a href=""><img src="icon/icon_search.png" alt=""></a>
+                    </nav>
+                </div>         
+                <nav class="gnb">
+                    <ul>
+                        <li class="item1">
+                            <a href="login.html" class="dp1">LOGIN</a>
+                        </li>
+                        <li class="item2">
+                            <a href="join.html" class="dp1">JOIN</a>
+                        </li>
+                        <li class="item3">
+                            <a href="falver.html" class="dp1">FLAVOR OF THE MONTH</a>
+                        </li>
+                        <li class="item4">
+                            <a href="menu.html#page1" class="dp1">MENU</a>
+                            <ul class="sub">
+                                <li><a href="menu.html#page1">아이스크림</a></li>
+                                <li><a href="menu.html#page2">아이스크림케이크</a></li>
+                                <li><a href="menu.html#page3">음료</a></li>
+                            </ul>
+                        </li>
+                        <li class="item4">
+                            <a href="event.html#page1" class="dp1">EVENT</a>
+                            <ul class="sub">
+                                <li><a href="event.html#page1">진행중이벤트</a></li>
+                                <li><a href="event.html#page2">당첨자발표</a></li>                               
+                            </ul>
+                        </li>
+                        <li class="item5">
+                            <a href="about.html#page1" class="dp1">ABOUT</a>
+                            <ul class="sub">
+                                <li><a href="about.html#page1">보도자료</a></li>
+                                <li><a href="about.html#page2">고객센터</a></li>                                
+                            </ul>
+                        </li>                        
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="content">
+            <figure class="mainpageimg">
+                <video src="img/mainpagetop.jpg" class="mainpageimg1"></video>
+            </figure>
+            <figure class="mainpageimg">
+                <video src="img/mainpage.jpg" class="mainpageimg2"></video>
+            </figure>            
+            <section class="page" id="page1">
+                <div class="page_wrap">
+                    <h2 class="page_tit">BR EVENT</h2>
+                    <ul class="pic_lst">
+                        <li>
+                            <a href="">
+                                <img src="img/main1.png" alt="" class="pic">
+                                <div class="hv_box">
+                                    <img src="icon/stit_store.gif" alt="">                          
+                                    <p class="pic_tit">해피오더 딜리버리로 간편하게 주문하세요!</p>
+                                    <h3 class="pic_date">상시진행</h3>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="img/main2.png" alt="" class="pic">
+                                <div class="hv_box">
+                                    <img src="icon/stit_store.gif" alt="">   
+                                    <p class="pic_tit">배달의 민족에서 빠르게 주문하세요!</p>
+                                    <h3 class="pic_date">상시진행</h3>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="img/main3.png" alt="" class="pic">
+                                <div class="hv_box">
+                                    <img src="icon/stit_store.gif" alt="">   
+                                    <p class="pic_tit">요기요에서 손쉽게 주문하세요!</p>
+                                    <h3 class="pic_date">상시진행</h3>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="img/main4.png" alt="" class="pic">
+                                <div class="hv_box">
+                                    <img src="icon/stit_store.gif" alt="">   
+                                    <p class="pic_tit">요기요에서 손쉽게 주문하세요!</p>
+                                    <h3 class="pic_date">상시진행</h3>
+                                </div>
+                            </a>
+                        </li>                        
+                    </ul>
+                </div>
+            </section>            
+        </div>
+        <footer class="ft">
+            <div class="ft_wrap">                
+                <div class="ft_logo"><img src="img/logo.svg" alt="하단로고"></div>
+                <div class="mid_box">
+                    <nav class="fnb">
+                        <a href="" class="dpc">점포개설문의</a>
+                        <a href="" class="dpc">채용문의</a>
+                        <a href="" class="dpc">윤리신고센터</a>
+                        <a href="" class="dpc">이용약관</a>
+                        <a href="" class="dpc">개인정보처리방침</a>
+                        <a href="" class="dpc">영상정보처리기기운영관리방침</a>
+                        <a href="" class="dpc">안전보건 경영방침</a>
+                        <a href="" class="dpc">거래희망회사 사전등록</a>                        
+                    </nav>
+                    <div class="sel_box">
+                        <img src="img/sel1.png" alt="">
+                        <img src="img/sel2.png" alt="">
+                        <img src="img/sel3.png" alt="">
+                        <select name="sel" id="sel" class="sel" onchange="sel_link(this)">
+                            <option value="">FAMILY SITE</option>
+                            <option value="">베스킨스쿨</option>
+                            <option value="">SPC그룹사이트</option>
+                        </select>
+                    </div>
+                    <div class="addr">
+                        <img src="logo/footer_logo.png" alt="">
+                        <p>사업자 등록번호 : 303-81-09535</p>
+                        <p>비알코리아(주) 대표이사 도세호</p>
+                        <p>서울특별시 서초구 남부순환로 2620(양재동 11-149번지)</p>
+                        <p>TEL : 080-555-3131</p>
+                        <p>개인정보관리책임자 : 김경우</p>
+                    <div class="copyright">Copyright ⓒ 2016 BRKOREA Company. All Rights Reserved.</p>
+                </div>               
+                <script>
+                    function sel_link(sel) {
+                        location.href = sel.value;
+                    }
+                </script>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
